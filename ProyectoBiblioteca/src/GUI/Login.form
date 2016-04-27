@@ -50,8 +50,8 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="bannerUV" min="-2" pref="435" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="txtpwd" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Component id="txtNombre" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Component id="pfContrasena" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Component id="txtFNombre" min="-2" pref="129" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -92,11 +92,11 @@
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="label1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNombre" max="-2" attributes="0"/>
+                  <Component id="txtFNombre" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtpwd" min="-2" max="-2" attributes="0"/>
+                  <Component id="pfContrasena" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
@@ -120,15 +120,15 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAceptarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNombre">
+        <Component class="javax.swing.JTextField" name="txtFNombre">
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNombreMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtFNombreMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFNombreActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="txtpwd">
+        <Component class="javax.swing.JPasswordField" name="pfContrasena">
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtpwdMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pfContrasenaMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBox1">
