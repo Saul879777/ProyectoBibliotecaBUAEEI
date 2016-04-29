@@ -17,7 +17,7 @@ public class Conexion {
   public Connection conectar() {
     try{
       Class.forName("com.mysql.jdbc.Driver");
-      con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/biblioteca", "ricardo", "ricardo");
+      con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/biblioteca", "root", "SaulRoot");
       JOptionPane.showMessageDialog(null, "Conexión está establecida");
     }
     catch (ClassNotFoundException | SQLException e) {

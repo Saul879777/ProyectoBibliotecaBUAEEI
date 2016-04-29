@@ -9,6 +9,8 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import usuarios.Academico;
+import usuarios.Alumno;
 
 /**
  *
@@ -49,6 +51,8 @@ public class RegistraUsuario extends javax.swing.JFrame {
     pfConfirmarContrasena = new javax.swing.JPasswordField();
     btnConfirmar = new javax.swing.JToggleButton();
     btnCancelar = new javax.swing.JButton();
+    txtFTipoDeUsuario = new javax.swing.JLabel();
+    cBTipoDeUsuario = new javax.swing.JComboBox<>();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,73 +81,85 @@ public class RegistraUsuario extends javax.swing.JFrame {
 
     btnCancelar.setText("Cancelar");
 
+    txtFTipoDeUsuario.setText("TipoDeUsuario:");
+
+    cBTipoDeUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Usuario...", "Alumno", "Maestro"}));
+    cBTipoDeUsuario.addItemListener(new java.awt.event.ItemListener() {
+      public void itemStateChanged(java.awt.event.ItemEvent evt) {
+        cBTipoDeUsuarioItemStateChanged(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
         .addContainerGap(34, Short.MAX_VALUE)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(lblMatriculaONoPersonal)
-              .addComponent(lblDireccion)
-              .addComponent(lblEMail)
-              .addComponent(lblTelefono)
-              .addComponent(lblNombre)
-              .addComponent(lblContrasena)
-              .addComponent(jLabel1))
-            .addGap(48, 48, 48)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-              .addComponent(pfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(pfConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtFEMail, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtFDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtFMatriculaONoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addComponent(btnCancelar)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnConfirmar)))
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(lblMatriculaONoPersonal)
+          .addComponent(lblDireccion)
+          .addComponent(lblEMail)
+          .addComponent(lblTelefono)
+          .addComponent(lblNombre)
+          .addComponent(lblContrasena)
+          .addComponent(jLabel1)
+          .addComponent(btnCancelar)
+          .addComponent(txtFTipoDeUsuario))
+        .addGap(48, 48, 48)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(pfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pfConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtFEMail, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtFDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtFMatriculaONoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnConfirmar))
+          .addComponent(cBTipoDeUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(45, 45, 45))
     );
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel2Layout.createSequentialGroup()
-        .addGap(38, 38, 38)
+        .addContainerGap(35, Short.MAX_VALUE)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(txtFTipoDeUsuario)
+          .addComponent(cBTipoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(lblMatriculaONoPersonal)
           .addComponent(txtFMatriculaONoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(lblNombre)
-          .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(lblNombre))
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(lblDireccion)
           .addComponent(txtFDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(lblEMail)
-          .addComponent(txtFEMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(txtFEMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(lblEMail))
+        .addGap(18, 18, 18)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(lblTelefono, javax.swing.GroupLayout.Alignment.TRAILING)
+          .addComponent(txtFTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(lblTelefono)
-          .addComponent(txtFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(18, 18, 18)
-        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(lblContrasena)
-          .addComponent(pfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(pfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(lblContrasena))
         .addGap(18, 18, 18)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel1)
           .addComponent(pfConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(18, 18, 18)
+        .addGap(23, 23, 23)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnConfirmar)
           .addComponent(btnCancelar))
-        .addContainerGap(26, Short.MAX_VALUE))
+        .addGap(28, 28, 28))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,55 +177,33 @@ public class RegistraUsuario extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-    Conexion con = new Conexion();
-    Connection registro = con.conectar();
     int tipoUsuario; //Se da por hecho que tipo de usuario 1 es academico y tipo de usuario 2 es alumno
     String matriculaONoPersonal, nombre, direccion, eMail, telefono;
     char contrasena [];
-    char confirmarContrasena [];
-    String comandoSQL;
     matriculaONoPersonal = txtFMatriculaONoPersonal.getText();
     nombre=txtFNombre.getText();
     direccion=txtFDireccion.getText();
     eMail=txtFEMail.getText();
     telefono=txtFTelefono.getText();
     contrasena=pfContrasena.getPassword();
-    confirmarContrasena=pfConfirmarContrasena.getPassword();
     String password = new String (contrasena);
-    //String confirmarPassword = new String (confirmarContrasena);
-    /*if (matriculaONoPersonal.contains("S")){
-      tipoUsuario = 1;
-    }*/
-    //else{
-      tipoUsuario = 1;
-      boolean estado = true;
-    //}
-    
-    //if (password.equals(confirmarPassword)){
-      comandoSQL = "INSERT INTO usuario (idUsuario, tipoUsuario_idTipoUsuario, nombre, direccion, "
-              + "email, telefono, contrasena, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-      try {
-        PreparedStatement pst = registro.prepareStatement(comandoSQL);
-        pst.setString(1, matriculaONoPersonal);
-        pst.setInt(2, tipoUsuario);
-        pst.setString(3, nombre);
-        pst.setString(4, direccion);
-        pst.setString(5, eMail);
-        pst.setString(6, telefono);
-        pst.setString(7, password);
-        pst.setBoolean(8, estado);
-        int n = pst.executeUpdate();
-        if (n < 0){
-          JOptionPane.showMessageDialog(null, "El usuario ha sido registrado exitosamente");
-        }
-      } catch (SQLException ex) {
-        Logger.getLogger(RegistraUsuario.class.getName()).log(Level.SEVERE, null, ex);
-      }
-    //}
-    //else{
-      //JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-    //}
+    String carrera = null;
+    if (cBTipoDeUsuario.getSelectedItem().equals("Alumno")){
+      
+    }
+    else{
+      
+    }
   }//GEN-LAST:event_btnConfirmarActionPerformed
+
+  private void cBTipoDeUsuarioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cBTipoDeUsuarioItemStateChanged
+    if (cBTipoDeUsuario.getSelectedItem().equals("Alumno")){
+      lblMatriculaONoPersonal.setText("Matricula");
+    }
+    else{
+      lblMatriculaONoPersonal.setText("No. de Personal");
+    }
+  }//GEN-LAST:event_cBTipoDeUsuarioItemStateChanged
 
   public void limpiarCampos(){
     txtFNombre.setText(" ");
@@ -258,6 +252,7 @@ public class RegistraUsuario extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnCancelar;
   private javax.swing.JToggleButton btnConfirmar;
+  private javax.swing.JComboBox<String> cBTipoDeUsuario;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JLabel lblContrasena;
@@ -273,5 +268,6 @@ public class RegistraUsuario extends javax.swing.JFrame {
   private javax.swing.JTextField txtFMatriculaONoPersonal;
   private javax.swing.JTextField txtFNombre;
   private javax.swing.JTextField txtFTelefono;
+  private javax.swing.JLabel txtFTipoDeUsuario;
   // End of variables declaration//GEN-END:variables
 }
