@@ -2,12 +2,12 @@ package usuarios;
 
 public class Usuario extends Persona {
 
-  protected boolean estado;
+  protected int estado;
   protected String fechaDeIngreso;
   protected String usuario;
 	
   public Usuario (String nombre, String direccion, String eMail, 
-    String telefono, boolean estado, String fechaDeIngreso, 
+    String telefono, int estado, String fechaDeIngreso, 
     String usuario) {
     super(nombre, direccion, eMail, telefono);
     this.estado = estado;
@@ -15,7 +15,7 @@ public class Usuario extends Persona {
     this.usuario = usuario;
   }
 	
-  public boolean isEstado() {
+  public int getEstado() {
     return estado;
   }
         
@@ -27,7 +27,7 @@ public class Usuario extends Persona {
     this.usuario = usuario;
   }
 	
-  public void setEstado(boolean estado) {
+  public void setEstado(int estado) {
     this.estado = estado;
   }
 	

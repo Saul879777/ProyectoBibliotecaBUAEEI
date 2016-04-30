@@ -5,10 +5,15 @@ public class Alumno extends Usuario {
   private String carrera;
   private String contrasenaAlumno;
 
-  public Alumno(String nombre, String direccion, String eMail, String telefono, boolean estado, String fechaDeIngreso, String usuario) {
+  public Alumno(String matricula, String carrera, String contrasenaAlumno, String nombre, String direccion, String eMail, 
+          String telefono, int estado, String fechaDeIngreso, String usuario) {
     super(nombre, direccion, eMail, telefono, estado, fechaDeIngreso, usuario);
-    
+    this.matricula = matricula;
+    this.carrera = carrera;
+    this.contrasenaAlumno = contrasenaAlumno;
   }
+
+  
 	
   public String getMatricula() {
     return matricula;

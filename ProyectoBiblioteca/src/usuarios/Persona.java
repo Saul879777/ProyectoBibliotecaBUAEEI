@@ -36,7 +36,6 @@ public class Persona {
 	}
 	
 	public Persona(String nombre, String direccion, String eMail, String telefono) {
-		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.eMail = eMail;
