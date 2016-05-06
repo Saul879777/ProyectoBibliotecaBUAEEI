@@ -9,12 +9,13 @@ package materiales;
  *
  * @author x360
  */
-public class MediosOpticos extends Material {
+public class MedioOptico extends Material {
   private String tipo;
 
-  public MediosOpticos(String editorial, String fechaDePublicacion, double precio, 
-          String titulo, String estado, String folio, int tipoDeMaterial, String tipo) {
-    super(editorial, fechaDePublicacion, precio, titulo, estado, folio, tipoDeMaterial);
+  public MedioOptico(String editorial, String fechaDePublicacion, 
+          double precio, String titulo, String estado, String folio, 
+          String tipo) {
+    super(editorial, fechaDePublicacion, precio, titulo, estado, folio);
     this.tipo = tipo;
   }
 

@@ -13,10 +13,8 @@ public class Mapa extends Material {
   private String tipoDeMapa;
 
   public Mapa(String editorial, String fechaDePublicacion, double precio, 
-          String titulo, String estado, String folio, int tipoDeMaterial, 
-          String tipoDeMapa) {
-    super(editorial, fechaDePublicacion, precio, titulo, estado, folio, 
-            tipoDeMaterial);
+          String titulo, String estado, String folio, String tipoDeMapa) {
+    super(editorial, fechaDePublicacion, precio, titulo, estado, folio);
     this.tipoDeMapa = tipoDeMapa;
   }
 

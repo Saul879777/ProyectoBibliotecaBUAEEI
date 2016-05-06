@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 package GUI;
-import ConexionBDD.*; //TODO Quitar todos estos import cuando la modularidad de los métodos de MYSQL sean implementados
-import java.sql.*; 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import usuarios.CrearUsuario;
 
 /**

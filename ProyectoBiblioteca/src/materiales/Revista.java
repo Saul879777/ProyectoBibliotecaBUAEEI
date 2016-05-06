@@ -13,10 +13,8 @@ public class Revista extends Material {
   private String volumen;
 
   public Revista(String editorial, String fechaDePublicacion, double precio, 
-          String titulo, String estado, String folio, int tipoDeMaterial, 
-          String volumen) {
-    super(editorial, fechaDePublicacion, precio, titulo, estado, folio, 
-            tipoDeMaterial);
+          String titulo, String estado, String folio, String volumen) {
+    super(editorial, fechaDePublicacion, precio, titulo, estado, folio);
     this.volumen=volumen;
   }
 

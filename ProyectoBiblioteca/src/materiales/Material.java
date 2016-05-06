@@ -7,16 +7,15 @@ public class Material {
   private String titulo;
   private String estado;
   private String folio;
-  private int tipoDeMaterial;
 
-  public Material(String editorial, String fechaDePublicacion, double precio, String titulo, String estado, String folio, int tipoDeMaterial) {
+  public Material(String editorial, String fechaDePublicacion, double precio, 
+          String titulo, String estado, String folio) {
     this.editorial = editorial;
     this.fechaDePublicacion = fechaDePublicacion;
     this.precio = precio;
     this.titulo = titulo;
     this.estado = estado;
     this.folio = folio;
-    this.tipoDeMaterial = tipoDeMaterial;
   }
 	
   public String getEditorial() {
@@ -66,12 +65,5 @@ public class Material {
   public void setFolio(String folio) {
     this.folio = folio;
   }
-	
-  public int getTipoDeMaterial() {
-    return tipoDeMaterial;
-  }
-	
-  public void setTipoDeMaterial(int tipoDeMaterial) {
-    this.tipoDeMaterial = tipoDeMaterial;
-  }
+
 }

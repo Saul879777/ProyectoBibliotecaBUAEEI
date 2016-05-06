@@ -13,10 +13,8 @@ public class Software extends Material {
   private float version;
 
   public Software(String editorial, String fechaDePublicacion, double precio, 
-          String titulo, String estado, String folio, int tipoDeMaterial, 
-          float version) {
-    super(editorial, fechaDePublicacion, precio, titulo, estado, folio, 
-            tipoDeMaterial);
+          String titulo, String estado, String folio, float version) {
+    super(editorial, fechaDePublicacion, precio, titulo, estado, folio);
     this.version = version;
   }
   

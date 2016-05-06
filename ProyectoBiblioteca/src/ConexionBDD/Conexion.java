@@ -13,11 +13,13 @@ import javax.swing.JOptionPane;
  */
 public class Conexion {
   Connection con = null;
-  
+  String usuario = "root";
+  String contrasena = "SaulRoot";
+  String url = "jdbc:mysql://127.0.0.1:3306/biblioteca";
   public Connection conectar() {
     try{
       Class.forName("com.mysql.jdbc.Driver");
-      con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/biblioteca", "root", "SaulRoot");
+      con = DriverManager.getConnection(url, usuario, contrasena);
       JOptionPane.showMessageDialog(null, "Conexión está establecida");
     }
     catch (ClassNotFoundException | SQLException e) {

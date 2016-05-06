@@ -13,10 +13,8 @@ public class Periodico extends Material {
   private String fechaDia;
 
   public Periodico(String editorial, String fechaDePublicacion, double precio, 
-          String titulo, String estado, String folio, int tipoDeMaterial, 
-          String fechaDia) {
-    super(editorial, fechaDePublicacion, precio, titulo, estado, folio, 
-            tipoDeMaterial);
+          String titulo, String estado, String folio, String fechaDia) {
+    super(editorial, fechaDePublicacion, precio, titulo, estado, folio);
     this.fechaDia = fechaDia;
   }
 
