@@ -18,6 +18,10 @@ public class RegistrarUsuario extends javax.swing.JFrame {
   public RegistrarUsuario() {
     initComponents();
     setLocationRelativeTo(null);
+    lblMatriculaONoPersonal.setVisible(false);
+    txtFMatriculaONoPersonal.setVisible(false);
+    lblCarrera.setVisible(false);
+    cBCarrera.setVisible(false);
   }
 
   /**
@@ -217,13 +221,22 @@ public class RegistrarUsuario extends javax.swing.JFrame {
   private void cBTipoDeUsuarioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cBTipoDeUsuarioItemStateChanged
     if (cBTipoDeUsuario.getSelectedItem().equals("Alumno")){
       lblMatriculaONoPersonal.setText("Matricula");
+      lblMatriculaONoPersonal.setVisible(true);
+      txtFMatriculaONoPersonal.setVisible(true);
       lblCarrera.setVisible(true);
       cBCarrera.setVisible(true);
-    }
-    else{
-      lblMatriculaONoPersonal.setText("No. de Personal");
-      lblCarrera.setVisible(false);
-      cBCarrera.setVisible(false);
+    }else { 
+      if (cBTipoDeUsuario.getSelectedItem().equals("Maestro")){
+        lblMatriculaONoPersonal.setText("No. de Personal");
+        lblMatriculaONoPersonal.setVisible(true);
+        txtFMatriculaONoPersonal.setVisible(true);
+        lblCarrera.setVisible(false);
+        cBCarrera.setVisible(false);
+      }
+      else{
+        lblMatriculaONoPersonal.setVisible(false);
+        txtFMatriculaONoPersonal.setVisible(false);
+      }
     }
   }//GEN-LAST:event_cBTipoDeUsuarioItemStateChanged
 
